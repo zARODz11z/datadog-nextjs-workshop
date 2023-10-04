@@ -18,11 +18,13 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (
   }
   const largestPrime = getLargestPrime(Number.parseInt(max));
 
-  console.log({
-    largestPrime,
-    strategy: "ssr",
-    developer: DEVELOPER_NAME,
-  });
+  console.log(
+    JSON.stringify({
+      largestPrime,
+      strategy: "ssr",
+      developer: DEVELOPER_NAME,
+    })
+  );
 
   const props: PageProps = { largestPrime };
   return { props };

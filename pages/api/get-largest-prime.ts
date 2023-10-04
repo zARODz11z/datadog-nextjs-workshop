@@ -15,11 +15,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const largestPrime = getLargestPrime(maxValue);
 
-  console.log({
-    largestPrime,
-    strategy: "client-fetching",
-    developer: DEVELOPER_NAME,
-  });
+  console.log(
+    JSON.stringify({
+      largestPrime,
+      strategy: "client-fetching",
+      developer: DEVELOPER_NAME,
+    })
+  );
 
   res.status(200).json(largestPrime);
 }

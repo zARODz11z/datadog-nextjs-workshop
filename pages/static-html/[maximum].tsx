@@ -35,7 +35,9 @@ const SSGPrimePage = () => {
     return getLargestPrime(max);
   }, [max]);
 
-  console.log({ largestPrime, strategy: "ssg", developer: DEVELOPER_NAME });
+  console.log(
+    JSON.stringify({ largestPrime, strategy: "ssg", developer: DEVELOPER_NAME })
+  );
 
   return (
     <LargestPrimePage
