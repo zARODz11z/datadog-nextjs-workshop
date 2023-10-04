@@ -1,4 +1,5 @@
 import { LargestPrimePage } from "@/lib/LargestPrimePage";
+import { DEVELOPER_NAME } from "@/lib/developer-name";
 import { getLargestPrime } from "@/lib/get-largest-prime";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
@@ -18,7 +19,11 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (
   }
   const largestPrime = getLargestPrime(Number.parseInt(max));
 
-  console.log({ context, largestPrime });
+  console.log({
+    largestPrime,
+    strategy: "ssr",
+    developer: DEVELOPER_NAME,
+  });
 
   const props: PageProps = { largestPrime };
   return { props };
