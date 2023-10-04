@@ -3,7 +3,6 @@ import { DEVELOPER_NAME } from "@/lib/developer-name";
 import { getLargestPrime } from "@/lib/get-largest-prime";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 interface PageProps {
   largestPrime: number | null;
